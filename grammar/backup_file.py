@@ -1,5 +1,4 @@
 import os
-import time
 
 # only for windows
 source = 'D:' + os.sep + 'mp4'
