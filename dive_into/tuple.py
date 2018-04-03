@@ -1,0 +1,12 @@
+a_tuple = ('a', 'b', 'c', 'a')
+print(a_tuple)
+print(a_tuple.index('a'))
+print(a_tuple.count('a'))
+print('b' in a_tuple)
+v = (1, 3, 13)
+x, y, z = v
+print(x)
+print(y)
+print(z)
+MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY = range(7)
+print(THURSDAY)
