@@ -1,5 +1,6 @@
 import string
 
+
 def reverse(sentence):
     return sentence[::-1]
 
@@ -20,7 +21,7 @@ def reverse_by_word(sentence):
     return result
 
 
-sentence = "I am Haoliang."
-print(sentence)
-print(reverse(sentence))
-print(reverse_by_word(reverse(sentence)))
+one_sentence = "I am Hao."
+print(one_sentence)
+print(reverse(one_sentence))
+print(reverse_by_word(reverse(one_sentence)))
