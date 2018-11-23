@@ -1,7 +1,7 @@
-def factorial(n):
-    if n <= 1:
+def factorial(natural_num):
+    if natural_num <= 1:
         return 1
-    return n * factorial(n - 1)
+    return natural_num * factorial(natural_num - 1)
 
 
 print(factorial(5))

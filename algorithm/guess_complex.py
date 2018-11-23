@@ -13,5 +13,5 @@ def guess(num):
             break
 
 
-your_num = int(input('输入你要猜的数(1~100之间的整数):'))
-guess(your_num)
+your_input_num = int(input('输入你要猜的数(1~100之间的自然数):'))
+guess(your_input_num)

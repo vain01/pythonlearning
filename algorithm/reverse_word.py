@@ -21,7 +21,7 @@ def reverse_by_word(sentence):
     return result
 
 
-one_sentence = "I am Hao."
-print(one_sentence)
-print(reverse(one_sentence))
-print(reverse_by_word(reverse(one_sentence)))
+origin_sentence = "I am Hao."
+print(origin_sentence)
+print(reverse(origin_sentence))
+print(reverse_by_word(reverse(origin_sentence)))

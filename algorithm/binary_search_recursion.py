@@ -17,5 +17,5 @@ def search_recursion(nums, lo, hi, key):
 
 
 num_list = [3, 4, 5, 6, 7, 8, 33, 66]
-expected_num = 3
-print(search(num_list, expected_num))
+num = 3
+print(search(num_list, num))
