@@ -6,19 +6,21 @@ def reverse(sentence):
 
 
 def reverse_by_word(sentence):
-    result = ''
+    ret = ''
     word = ''
+
     for char in sentence:
         if (char in string.punctuation) or char == ' ':
-            result += word
-            result += char
+            ret += word
+            ret += char
             word = ''
         else:
             word = char + word
+            
     if word != '':
-        result += word
+        ret += word
 
-    return result
+    return ret
 
 
 origin_sentence = "I am Hao."
