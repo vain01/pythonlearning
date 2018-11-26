@@ -1,7 +1,7 @@
 def histogram(nums):
     ret = {}
     for item in nums:
-        ret[item] = ret.get(item, 0)+1
+        ret[item] = ret.get(item, 0) + 1
     return ret
 
 

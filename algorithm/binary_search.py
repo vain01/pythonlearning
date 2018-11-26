@@ -1,13 +1,13 @@
 def search(nums, key):
-    lo = 0
-    hi = len(nums) - 1
-    while lo <= hi:
-        mid = (lo + hi) // 2
+    low_index = 0
+    high_index = len(nums) - 1
+    while low_index <= high_index:
+        mid = (low_index + high_index) // 2
         print('猜测中:{0}'.format(nums[mid]))
         if key < nums[mid]:
-            hi = mid - 1
+            high_index = mid - 1
         elif nums[mid] < key:
-            lo = mid + 1
+            low_index = mid + 1
         else:
             return mid
 

@@ -16,7 +16,7 @@ def reverse_by_word(sentence):
             word = ''
         else:
             word = char + word
-            
+
     if word != '':
         ret += word
 

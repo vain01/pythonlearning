@@ -1,13 +1,13 @@
 def invert_dict(map):
-    inverse=dict()
+    inverse = dict()
     for item in map:
-        val=map[item]
+        val = map[item]
         if val in inverse:
             inverse[val].append(item)
         else:
-            inverse[val]=[item]
+            inverse[val] = [item]
     return inverse
-    
 
-origin_map={'a':1,'b':2,'c':1}
+
+origin_map = {'a': 1, 'b': 2, 'c': 1}
 print(invert_dict(origin_map))

@@ -1,17 +1,17 @@
 def guess(num):
-    lo = 1
-    hi = 100
-    while lo <= hi:
-        mid = (lo + hi) // 2
-        print('猜测中:{0}'.format(mid))
-        if num < mid:
-            hi = mid - 1
-        elif mid < num:
-            lo = mid + 1
+    min_num = 1
+    max_num = 100
+    while min_num <= max_num:
+        median = (min_num + max_num) // 2
+        print('猜测中:{0}'.format(median))
+        if num < median:
+            max_num = median - 1
+        elif median < num:
+            min_num = median + 1
         else:
-            print('===猜中===:{0}'.format(mid))
+            print('===猜中===:{0}'.format(median))
             break
 
 
-your_input_num = int(input('输入你要猜的数(1~100之间的自然数):'))
-guess(your_input_num)
+guessed_num = int(input('输入你要我猜的数(1~100之间的自然数):'))
+guess(guessed_num)

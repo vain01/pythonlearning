@@ -11,7 +11,7 @@ def quick_sort(nums):
             left_hand.append(item)
         else:
             right_hand.append(item)
-            
+
     return quick_sort(left_hand) + [pivot] + quick_sort(right_hand)
 
 
