@@ -7,5 +7,5 @@ if 'a' in name:
 if name.find('li') != -1:
     print('Yes, it contains the string "li')
 delimiter = '*'
-mylist = ['Brazil', 'China', 'India', 'Russia']
-print(delimiter.join(mylist))
+my_list = ['Brazil', 'China', 'India', 'Russia']
+print(delimiter.join(my_list))
