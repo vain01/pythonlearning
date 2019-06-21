@@ -1,4 +1,7 @@
 def gcd(p, q):
+    """
+    最大公约数greatest common divisor
+    """
     if q == 0:
         return p
     remainder = p % q

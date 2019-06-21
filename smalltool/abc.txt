@@ -1,0 +1,61 @@
+use prp_message_center;
+
+update prp_remind set push=0,message=0 where nid = 'flowLoanSuccess';
+update prp_message_template set content = '亲爱的#NAME#，您在秒白条的借款申请已经通过审核，请耐心等待放款。' where remind_id = (select id from prp_remind where nid = 'flowLoanSuccess') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'flowLoanSuccess' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'flowLoanTopay';
+update prp_message_template set content = '亲爱的#NAME#，您在秒白条的借款申请已经通过审核，完成风险测评才能下款，请尽快前往老哥帮APP进行测评。' where remind_id = (select id from prp_remind where nid = 'flowLoanTopay') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'flowLoanTopay' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'flowLoanFail';
+update prp_message_template set content = '亲爱的#NAME#，很抱歉，您在秒白条的借款申请未通过审核。去老哥帮上看看其他平台吧。' where remind_id = (select id from prp_remind where nid = 'flowLoanFail') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'flowLoanFail' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'flowLoanLatePayNotice';
+update prp_message_template set content = '亲爱的#NAME#，成功获取风险评估报告的用户，都成功借到款！快登录老哥帮APP，获取报告完成借款吧！' where remind_id = (select id from prp_remind where nid = 'flowLoanLatePayNotice') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'flowLoanLatePayNotice' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'flowLoanLatePayNotice1';
+update prp_message_template set content = '亲爱的#NAME#，您在秒白条的借款申请已经通过审核，完成风险评测即可提现1000元，快去支付吧。10分钟后失效。' where remind_id = (select id from prp_remind where nid = 'flowLoanLatePayNotice1') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'flowLoanLatePayNotice1' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'flowLoanLatePayRefuse';
+update prp_message_template set content = '亲爱的#NAME#，由于您未完成风险评估报告，您在秒白条的借款申请已失效。如有需要请重新提交申请。详情登录老哥帮APP查看。' where remind_id = (select id from prp_remind where nid = 'flowLoanLatePayRefuse') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'flowLoanLatePayRefuse' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'flowLoanPaySuccess1';
+update prp_message_template set content = '亲爱的#NAME#，您已成功支付风险评估报告费，秒白条正在为您放款，请耐心等待。若下款失败请及时联系秒白条全额退款，电话021-80348150' where remind_id = (select id from prp_remind where nid = 'flowLoanPaySuccess1') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'flowLoanPaySuccess1' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'flowLoanPaySuccess';
+update prp_message_template set content = '亲爱的#NAME#，您已成功支付风险评估报告费，秒白条正在为您放款，请耐心等待。若下款失败请及时联系秒白条全额退款，电话021-80348150' where remind_id = (select id from prp_remind where nid = 'flowLoanPaySuccess') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'flowLoanPaySuccess' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'creditReportNoPayCronDay';
+update prp_message_template set content = '亲爱的#NAME#，您有一笔#AMOUNT#元的风险评估报告费尚未支付，请尽快登录老哥帮APP支付！支付成功后才能再次申请借款哦。' where remind_id = (select id from prp_remind where nid = 'creditReportNoPayCronDay') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'creditReportNoPayCronDay' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'CreditReportActivePaySuccess';
+update prp_message_template set content = '亲爱的#NAME#，您已成功支付#AMOUNT#元信用报告费！点滴信用在于积累，记得按时还款哦。' where remind_id = (select id from prp_remind where nid = 'CreditReportActivePaySuccess') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'CreditReportActivePaySuccess' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'flowLoanRefundSuccess';
+update prp_message_template set content = '亲爱的#NAME#，您在老哥帮发起的秒白条#AMOUNT#元报告费退款申请，费用已成功退回到您绑定的银行卡中，请注意查收，如有疑问联系秒白条处理。' where remind_id = (select id from prp_remind where nid = 'flowLoanRefundSuccess') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'flowLoanRefundSuccess' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'payCreditSuccess';
+update prp_message_template set content = '亲爱的#NAME#，您已成功支付风险评估报告费，秒白条正在为您放款，请耐心等待。若下款失败请及时联系秒白条全额退款，电话021-80348150' where remind_id = (select id from prp_remind where nid = 'payCreditSuccess') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'payCreditSuccess' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'LoanAndDebit';
+update prp_message_template set content = '亲爱的#NAME#，您已成功支付#AMOUNT#元报告服务费。借款已到账，快去享用吧，记得按时还款哦。' where remind_id = (select id from prp_remind where nid = 'LoanAndDebit') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'LoanAndDebit' and send_type = 'sms';
+
+update prp_remind set push=0,message=0 where nid = 'CreditReportActivePaySuccess';
+update prp_message_template set content = '亲爱的#NAME#，你已成功支付#AMOUNT#元报告费！点滴信用在于积累，记得按时还款哦。' where remind_id = (select id from prp_remind where nid = 'CreditReportActivePaySuccess') and send_type = 'sms' ;
+update prp_message_center_send_way_mapped set send_way_id = 32 where type = 'CreditReportActivePaySuccess' and send_type = 'sms';
+
+insert into prp_remind set nid = 'flowLoanPaySuccess2',type='flowLoanPaySuccess2',remark='借款成功-及时',voice=0,sms=1,message=0,enabled=1,is_all=0,push=0;
+insert into prp_message_center_send_way_mapped set type='flowLoanPaySuccess2',send_type='sms',send_way_id=32,operators=0,enabled=1;
+insert into prp_message_template set remind_id = (select id from prp_remind where nid ='flowLoanPaySuccess2' limit 1), send_type='sms',alidayu_sn='0',content='亲爱的#NAME#，您已成功支付#AMOUNT#元报告服务费。借款已到账，快去享用吧，记得按时还款哦。',replace_word='#NAME#,#AMOUNT#';
