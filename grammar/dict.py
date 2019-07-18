@@ -18,6 +18,12 @@ for name, mail in ab.items():
 
 # 添加一项
 ab['yufeng'] = 'chenyufeng@ifurion.com'
+print(ab['yufeng'])
+print(ab.get('yufeng'))
+
+if 'xx' not in ab:
+    ab['xx'] = 'xx@ifurion.com'
+print(ab.get('xx'))
 
 # 查看所有的字典中的key
 for name in ab.keys():

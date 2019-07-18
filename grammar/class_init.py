@@ -1,4 +1,6 @@
 class Person:
+    name = 'a'
+
     def __init__(self, name):
         self.name = name
 
@@ -8,4 +10,6 @@ class Person:
 
 p = Person('hao')
 p.say_hi()
-Person('liang').say_hi()
+# Person('liang').say_hi()
+print(p.name)
+print(Person.name)
